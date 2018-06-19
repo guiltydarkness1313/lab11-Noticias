@@ -1,0 +1,37 @@
+include layout
+block content
+    div.container
+        h2=item.titulo
+        div.card
+            div.container-fluid
+                h5=item.fecha
+                h5=item.categoria
+                h5=item.descripcion
+        h4 Comentarios
+        for xd in item.comentarios
+            div.card
+                div.container-fluid
+                    if xd._id
+                        h6
+                            strong=xd.autor
+                            a.pull-right(type="button" href="/comment_delete?_id=#{xd._id}&autor=#{xd.autor}&mensaje=#{xd.mensaje}&fecha=#{xd.fecha}&noticia_id=#{item._id}") X
+                            h6=xd.fecha
+                            h6=xd.mensaje
+                    else
+                        h6
+                            strong=xd.autor
+                            a.pull-right(type="button" href="/comment_delete?autor=#{xd.autor}&mensaje=#{xd.mensaje}&fecha=#{xd.fecha}&noticia_id=#{item._id}") X
+                            h6=xd.fecha
+                            h6=xd.mensaje
+
+        div.card
+            div.container
+                form(method="post" action="/comment_create?_id=#{item._id}")
+                    div.col-md-3.form-group
+                        label(for="autor") Autor:
+                        input.form-control(type="text" name="autor" id="autor")
+                        br
+                        label(for="mensaje") Mensaje:
+                        input.form-control(type="text" name="mensaje" id="mensaje")
+                        br
+                        button.btn.btn-success(type="submit") Enviar

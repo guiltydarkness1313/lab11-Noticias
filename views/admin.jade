@@ -1,0 +1,27 @@
+include layout
+block content
+    div.container-fluid
+        h3 Crear Noticia
+        a.btn.btn-success(role="button" href="/news_crear") Crear
+    div.container-fluid
+        h3 Lista de noticias
+        table.table
+            thead
+                tr
+                    th ID
+                    th Titulo
+                    th categoria
+                    th fecha
+                    th Edición
+                    th Eliminar
+            tbody
+                for item in data
+                    tr
+                        td=item._id
+                        td=item.titulo
+                        td=item.categoria
+                        td=item.fecha
+                        td
+                            a.btn.btn-info(role="button" href="/news_update?_id=#{item._id}") Editar
+                        td
+                            a.btn.btn-danger(role="button" href="/news_delete?_id=#{item._id}") Borrar

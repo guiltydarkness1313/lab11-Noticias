@@ -1,0 +1,112 @@
+include mixins
+doctype
+html(lang="es")
+  head
+    title Bootstrap Template with Jade
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE-edge")
+    meta(name="viewport", content="width=device.width, initial-scale=1.0")
+    meta(name="description", content="Baking Bootstrap Snippets with Jade")
+    +bootswatch("paper")
+    script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+    script(src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js")
+    style(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")
+    style(type='text/css').
+      #myCarousel .item{
+        height: 400px;
+      }
+      #slide1 {
+        background: url("https://wendywelchbigstonegap.files.wordpress.com/2012/05/valkyttie-on-the-table.jpg") center no-repeat;
+      }
+
+      #slide2 {
+        background: url("https://www.chroniclebooks.com/blog/wp-content/uploads/featured12.jpg") center no-repeat;
+      }
+
+      #slide3 {
+        background: url("https://goodereader.com/blog/uploads/images/light-novel-shop-3.jpg") center no-repeat;
+      }
+
+      .card {
+        /* Add shadows to create the "card" effect */
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+      }
+
+      /* On mouse-over, add a deeper shadow */
+      .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+      }
+
+      /* Add some padding inside the card container */
+      .container {
+        padding: 2px 16px;
+      }
+  body
+    block content
+    +nav("NeoTech", "dropdown-menu","inverse")
+      +nav_item("news_listar") Inicio
+      //+nav_item("about") Quienes Somos
+      //+nav_item("products") Productos
+      //+nav_item("contact") Contáctenos
+      //+nav_item_dropdown("#")(label="Dropdown")
+      //  +nav_item("#") Action
+      //  +nav_item("#") Another Action
+      //  +nav_item("#") Something else here
+      //  +nav_divider
+      //  +nav_header Nav header
+      //  +nav_item("#") Separated Link
+      //  +nav_item("#") One more separated link
+    //div.container-fluid
+    //  .row.m-1
+    //    .col-md-4.col-sm-6.col-xs-12
+    //      +panel("Panel H eading") This is an example panel
+    //      .jumbotron
+    //        h1 Hello, world!
+    //        p This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information
+    //        p: +button("primary","more.html","large") Learn more
+    //    .col-md-4.col-sm-6.col-xs-12
+    //      +panel("Panel Heading", "success") Panel in success
+    //      +alert("warning") Warning! Warning!
+    //      +alert("danger") Danger Will Robinson!
+    //      +alert("success") You Succeeded :-)
+    //      +alert("info") Some information for you
+    //    .col-md-4.col-sm-6.col-xs-12
+    //      +panel("Panel Heading", "danger") Panel in danger
+    //      +button Default
+    //      +button("primary", "link.htm") Primary
+    //      +button("success","success.html","large") Success
+    //      +button("info","info.html","small") Info
+    //      +button("warning", "warning.html", "mini") Warning
+    //  .row.m-1
+    //    .col-md-4.col-sm-6.col-xs-12
+    //      +listGroup("list")
+    //        +listItem("active") Cras justo odio
+    //        +listItem Dapibus ac facilisis im
+    //        +listItem Morbi leo risus
+    //        +listItem Dapibus ac facilisis im
+    //        +listItem Morbi leo risus
+    //        +listItem Dapibus ac facilisis im
+    //    .col-md-4.col-sm-6.col-xs-12
+    //      +listGroup("links")
+    //        +listItem("link1.html","active")
+    //          +listHeading List group item heading
+    //          +listText Donec id elit non mu porta gravida at eget metus
+    //        +listItem("link2.html")
+    //          +listHeading List group item heading
+    //          +listText Donec id elit non mu porta gravida at eget metus
+    //        +listItem("link2.html")
+    //          +listHeading List group item heading
+    //          +listText Donec id elit non mu porta gravida at eget metus
+    //    .col-md-4.col-sm-6.col-xs-12
+    //      +listGroup
+    //        +listItem
+    //          +listHeading list group item heading
+    //          +listText Donec id elit non mi porta gravida at eget metus.
+    //        +listItem
+    //          +listHeading list group item heading
+    //          +listText Donec id elit non mi porta gravida at eget metus.
+    //        +listItem
+    //          +listHeading list group item heading
+    //          +listText Donec id elit non mi porta gravida at eget metus.
+

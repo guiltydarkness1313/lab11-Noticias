@@ -1,0 +1,21 @@
+include layout
+block content
+    div.container
+            h1 Editar Noticia
+            div.col-md-8
+                form(method="post" action="/news_update?_id=#{data._id}")
+                    div.form-group
+                        label(for="titulo") Titulo
+                        input.form-control(id="titulo" name="titulo" type="text" value="#{data.titulo}")
+                        br
+                        label(for="descripcion") Descripción
+                        textarea.form-control(id="descripcion" name="descripcion" maxlength="400")
+                            | #{data.descripcion}
+                        br
+                        label(for="categoria") Categoria
+                        input.form-control(id="categoria" name="categoria" type="text" value="#{data.categoria}")
+                        br
+                        label(for="fecha") Fecha
+                        input.form-control(id="fecha" name="fecha" type="date" value="#{data.fecha}")
+                        br
+                        button.btn.btn-primary(type="submit") Editar

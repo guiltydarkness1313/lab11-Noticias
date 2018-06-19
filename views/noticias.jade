@@ -1,0 +1,23 @@
+include layout
+block content
+    div.container
+        h1 Noticias
+                 div.row
+                     each item in data
+                        div.row
+                            div.col-md-8
+                                div.card
+                                    a(href="news_detail?_id=#{item._id}" style="color:transparent")
+                                        div.container-fluid
+                                            h5=item.titulo
+                                            h5=item.fecha
+                                            h5=item.categoria
+                                            h5=item.descripcion
+                                            //h4 Comentarios
+                                    // for xd in item.comentarios
+                                    //     div.card
+                                    //         div.container
+                                    //             h6=xd.autor
+                                    //             h6=xd.fecha
+                                    //             h6=xd.mensaje
+                        br

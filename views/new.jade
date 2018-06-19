@@ -1,0 +1,20 @@
+include layout
+block content
+    div.container
+        h1 Crear Noticia
+        div.col-md-8
+            form(method="post" action="/news_crear")
+                div.form-group
+                    label(for="titulo") Titulo
+                    input.form-control(id="titulo" name="titulo" type="text")
+                    br
+                    label(for="descripcion") Descripción
+                    textarea.form-control(id="descripcion" name="descripcion" maxlength="250")
+                    br
+                    label(for="categoria") Categoria
+                    input.form-control(id="categoria" name="categoria" type="text")
+                    br
+                    label(for="fecha") Fecha
+                    input.form-control(id="fecha" name="fecha" type="date")
+                    br
+                    button.btn.btn-primary(type="submit") Crear
